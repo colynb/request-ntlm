@@ -1,6 +1,6 @@
 # Request-NTLM
 
-Module for authenticating with NTLM
+Module for authenticating with NTLM; An ntlm authentication wrapper for the Request module.
 
 ## Install with NPM
 

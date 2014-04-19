@@ -40,6 +40,6 @@ var makeRequest = function(method, options, params, callback) {
 };
 
 exports.get = _.partial(makeRequest, 'get');
-exports.create = _.partial(makeRequest, 'post');
-exports.update = _.partial(makeRequest, 'put');
-exports.remove = _.partial(makeRequest, 'delete');
+exports.post = _.partial(makeRequest, 'post');
+exports.put = _.partial(makeRequest, 'put');
+exports.delete = _.partial(makeRequest, 'delete');
