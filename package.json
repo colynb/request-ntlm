@@ -1,21 +1,21 @@
 {
   "name": "request-ntlm",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "NTLM auth for NodeJS",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository" : "https://github.com/colynb/request-ntlm",
+  "repository": "https://github.com/colynb/request-ntlm",
   "author": {
     "name": "Colyn Brown",
     "email": "clbrown@godaddy.com"
   },
   "license": "ISC",
   "dependencies": {
-    "async": "^0.7.0",
-    "httpreq": "^0.3.9",
     "agentkeepalive": "^0.2.2",
-    "lodash": "^2.4.1"
+    "async": "^0.7.0",
+    "lodash": "^2.4.1",
+    "request": "^2.34.0"
   }
 }

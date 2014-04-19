@@ -1,5 +1,5 @@
 var async = require('async');
-var httpreq = require('httpreq');
+var request = require('request');
 var ntlm = require('./lib/ntlm');
 var HttpsAgent = require('agentkeepalive').HttpsAgent;
 var keepaliveAgent = new HttpsAgent();
@@ -11,31 +11,29 @@ var makeRequest = function(method, options, params, callback) {
 
   function startAuth($) {
     var type1msg = ntlm.createType1Message(options);
-    httpreq[method](options.url, {
-      headers: {
-        'Connection': 'keep-alive',
-        'Authorization': type1msg
-      },
-      agent: keepaliveAgent
-    }, $);
+    options.method = method;
+    options.headers = {
+      'Connection': 'keep-alive',
+      'Authorization': type1msg
+    };
+    options.agent = keepaliveAgent;
+    request(options, $);
   }
 
-  function requestComplete(res, $) {
+  function requestComplete(res, body, $) {
     if (!res.headers['www-authenticate'])
       return $(new Error('www-authenticate not found on response of second request'));
 
     var type2msg = ntlm.parseType2Message(res.headers['www-authenticate']);
     var type3msg = ntlm.createType3Message(type2msg, options);
-    var req = {
-      headers: {
-        'Connection': 'Close',
-        'Authorization': type3msg
-      },
-      allowRedirects: false,
-      agent: keepaliveAgent,
-      json: params
+    options.method = method;
+    options.headers = {
+      'Connection': 'keep-alive',
+      'Authorization': type3msg
     };
-    httpreq[method](options.url, req, $);
+    options.agent = keepaliveAgent;
+    options.json = params;
+    request(options, $);
   }
 
   async.waterfall([startAuth, requestComplete], callback);
