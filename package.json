@@ -1,6 +1,6 @@
 {
   "name": "request-ntlm",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "NTLM auth for NodeJS",
   "main": "index.js",
   "scripts": {
