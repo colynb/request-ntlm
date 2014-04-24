@@ -2,10 +2,12 @@ var async = require('async');
 var request = require('request');
 var ntlm = require('./lib/ntlm');
 var HttpsAgent = require('agentkeepalive').HttpsAgent;
-var keepaliveAgent = new HttpsAgent();
 var _ = require('lodash');
 
 var makeRequest = function(method, options, params, callback) {
+
+  var keepaliveAgent = new HttpsAgent();
+
   if (!options.workstation) options.workstation = '';
   if (!options.domain) options.domain = '';
 
