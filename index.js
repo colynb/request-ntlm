@@ -18,10 +18,10 @@ var makeRequest = function(method, options, params, callback) {
   function startAuth($) {
     var type1msg = ntlm.createType1Message(options);
     options.method = method;
-    options.headers = {
+    _.extend(options.headers, {
       'Connection': 'keep-alive',
       'Authorization': type1msg
-    };
+    });
     options.agent = keepaliveAgent;
     request(options, $);
   }
@@ -33,10 +33,11 @@ var makeRequest = function(method, options, params, callback) {
     var type2msg = ntlm.parseType2Message(res.headers['www-authenticate']);
     var type3msg = ntlm.createType3Message(type2msg, options);
     options.method = method;
-    options.headers = {
+    _.extend(options.headers, {
       'Connection': 'keep-alive',
       'Authorization': type3msg
-    };
+    });
+
     options.agent = keepaliveAgent;
     options.json = params;
     request(options, $);
