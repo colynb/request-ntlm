@@ -39,7 +39,12 @@ var makeRequest = function(method, options, params, callback) {
     });
 
     options.agent = keepaliveAgent;
-    options.json = params;
+
+    if (typeof params == "string")
+      options.body = params;
+    else
+      options.json = params;
+
     request(options, $);
   }
 
