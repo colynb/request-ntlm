@@ -13,7 +13,7 @@ var makeRequest = function(method, options, params, callback) {
   var keepaliveAgent = new KeepAlive();
 
   if (!options.workstation) options.workstation = '';
-  if (!options.domain) options.domain = '';
+  if (!options.ntlm_domain) options.ntlm_domain = '';
 
   function startAuth($) {
     var type1msg = ntlm.createType1Message(options);
