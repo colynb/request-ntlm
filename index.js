@@ -14,6 +14,7 @@ var makeRequest = function(method, options, params, callback) {
 
   if (!options.workstation) options.workstation = '';
   if (!options.ntlm_domain) options.ntlm_domain = '';
+  if (!options.headers) options.headers = {};
 
   function startAuth($) {
     var type1msg = ntlm.createType1Message(options);
