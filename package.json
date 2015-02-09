@@ -1,6 +1,6 @@
 {
   "name": "request-ntlm-continued",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "NTLM auth for NodeJS - continued from Colyn Brown's project",
   "main": "index.js",
   "repository": "https://github.com/FrankyBoy/request-ntlm",
@@ -10,6 +10,9 @@
   },{
     "name": "Immanuel Hayden",
     "email": "immanuel.hayden@gmail.com"
+  },{
+    "name": "Brett Profitt",
+    "email": "brett.profitt@gmail.com"
   }],
   "license": "ISC",
   "dependencies": {
