@@ -16,7 +16,7 @@
   }],
   "license": "ISC",
   "dependencies": {
-    "agentkeepalive": "^0.2.2",
+    "agentkeepalive": "^2.0.3",
     "async": "^0.7.0",
     "lodash": "^2.4.1",
     "request": "^2.34.0"
