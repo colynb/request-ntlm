@@ -17,7 +17,7 @@ describe('request-ntlm-continued', function(){
 
     this.timeout(10000);
 
-    var executeRequestAgainsNtlmServer = simpleGetRequest;
+    var executeRequestAgainsNtlmServer = undefined;
     try {
         var options = require(__dirname + '/ntlm-options');
         executeRequestAgainsNtlmServer = simpleGetRequest(options);
