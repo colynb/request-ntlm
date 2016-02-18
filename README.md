@@ -34,3 +34,5 @@ ntlm.post(opts, json, function(err, response) {
 * options.domain is in use by request. Use ntlm_domain instead
 * ability to set custom headers
 * ability to use http and not only https
+* gracefully complete the request if the server doesn't actually require NTLM.
+  Fail only if `options.ntlm.strict` is set to `true` (default=`false`).

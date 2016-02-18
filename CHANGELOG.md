@@ -1,3 +1,7 @@
+# 0.1.3
+
+* Allow requests to non-NTLM resources
+
 # 0.1.1
 
 * Bugfix to allow type1 message auth
