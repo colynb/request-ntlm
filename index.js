@@ -3,7 +3,7 @@ var async   = require('async');
 var request = require('request');
 var ntlm    = require('./lib/ntlm');
 
-var makeRequest = function(method, options, params, callback) {
+var makeRequest = function(method, options, params, callback, pipeTarget) {
 
   var KeepAlive = require('agentkeepalive');
   if (options.url.toLowerCase().indexOf('https://') === 0) {
@@ -52,7 +52,11 @@ var makeRequest = function(method, options, params, callback) {
     else
       options.json = params;
 
-    request(options, $);
+    if (pipeTarget) {
+      request(options, $).pipe(pipeTarget);
+    } else {
+      request(options, $);
+    }
   }
 
   async.waterfall([startAuth, requestComplete], callback);
