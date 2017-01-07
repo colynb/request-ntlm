@@ -28,6 +28,12 @@ ntlm.post(opts, json, function(err, response) {
 });
 ```
 
+Requests can also be streamed:
+
+```javascript
+ntlm.get(opts, json, null, fs.createWriteStream('example.pdf'));
+```
+
 ## Changes from original:
 
 * don't assume the post body is an object and should be made into json
@@ -36,3 +42,4 @@ ntlm.post(opts, json, function(err, response) {
 * ability to use http and not only https
 * gracefully complete the request if the server doesn't actually require NTLM.
   Fail only if `options.ntlm.strict` is set to `true` (default=`false`).
+* implement streaming
