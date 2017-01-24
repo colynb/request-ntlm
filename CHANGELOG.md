@@ -1,3 +1,7 @@
+# 0.1.4
+
+* Made request.pipe() accessible for streaming
+
 # 0.1.3
 
 * Allow requests to non-NTLM resources
