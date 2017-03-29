@@ -62,8 +62,8 @@ var makeRequest = function(method, options, params, callback, pipeTarget) {
   async.waterfall([startAuth, requestComplete], callback);
 };
 
-exports.get   = _.partial(makeRequest, 'get');
-exports.post  = _.partial(makeRequest, 'post');
-exports.put   = _.partial(makeRequest, 'put');
+exports.get     = _.partial(makeRequest, 'get');
+exports.post    = _.partial(makeRequest, 'post');
+exports.put     = _.partial(makeRequest, 'put');
 exports.patch   = _.partial(makeRequest, 'patch');
-exports.delete= _.partial(makeRequest, 'delete');
+exports.delete  = _.partial(makeRequest, 'delete');

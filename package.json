@@ -1,6 +1,6 @@
 {
   "name": "request-ntlm-continued",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "NTLM auth for NodeJS - continued from Colyn Brown's project",
   "main": "index.js",
   "repository": "https://github.com/FrankyBoy/request-ntlm",
@@ -27,6 +27,10 @@
     {
       "name": "Adam Nielsen",
       "url": "https://github.com/adam-nielsen"
+    },
+    {
+      "name": "Ygal Bellaiche",
+      "url": "https://github.com/ygalbel"
     }
   ],
   "license": "ISC",

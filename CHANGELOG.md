@@ -1,3 +1,7 @@
+# 0.1.5
+
+* Add support for PATCH verb. 
+
 # 0.1.4
 
 * Made request.pipe() accessible for streaming
