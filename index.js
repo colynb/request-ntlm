@@ -65,4 +65,5 @@ var makeRequest = function(method, options, params, callback, pipeTarget) {
 exports.get   = _.partial(makeRequest, 'get');
 exports.post  = _.partial(makeRequest, 'post');
 exports.put   = _.partial(makeRequest, 'put');
+exports.patch   = _.partial(makeRequest, 'patch');
 exports.delete= _.partial(makeRequest, 'delete');
